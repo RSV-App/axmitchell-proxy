@@ -28,6 +28,10 @@ app.get('/:id/reservations', (req, res) => {
   redirectRequest(req, reservationsServer)
     .then(({ data }) => {
       res.send(data);
+    })
+    .catch((err) => {
+      res.status(500);
+      res.end();
     });
 });
 
@@ -35,6 +39,10 @@ app.get('/:id/reviews', (req, res) => {
   redirectRequest(req, reviewsServer)
     .then(({ data }) => {
       res.send(data);
+    })
+    .catch((err) => {
+      res.status(500);
+      res.end();
     });
 });
 
@@ -42,6 +50,10 @@ app.get('/api/menu/:id', (req, res) => {
   redirectRequest(req, menuServer)
     .then(({ data }) => {
       res.send(data);
+    })
+    .catch((err) => {
+      res.status(500);
+      res.end();
     });
 });
 
